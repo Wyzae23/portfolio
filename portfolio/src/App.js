@@ -23,7 +23,7 @@ function App() {
         <ButtonAppBar />
         <BrowserRouter>
           <Routes>
-            <Route index element={<HomePage />} />
+            <Route path="/portfolio" element={<HomePage />} />
             <Route path="/about_me" element={<AboutMePage />} />
           </Routes>
         </BrowserRouter>
