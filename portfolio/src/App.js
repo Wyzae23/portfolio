@@ -4,9 +4,9 @@ import { theme } from './components/theme/theme';
 import ButtonAppBar from './components/navbar/navbar';
 import HomePage from './components/home_page/home_page';
 import AboutMePage from './components/about_me_page/about_me_page';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom'; // Import HashRouter instead of BrowserRouter
 import Box from '@mui/material/Box'; // Import Box from Material-UI
-import background_photo from '../src/images/bg.jpg'
+import background_photo from '../src/images/bg.jpg';
 
 function App() {
   return (
@@ -21,12 +21,12 @@ function App() {
         }}
       >
         <ButtonAppBar />
-        <BrowserRouter>
+        <HashRouter> {/* Use HashRouter here */}
           <Routes>
-            <Route path="/portfolio" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/about_me" element={<AboutMePage />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
         {/* <SocialLinksBar /> */}
       </Box>
     </ThemeProvider>
