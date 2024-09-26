@@ -13,7 +13,7 @@ const renderTextWithBold = (text, boldWords) => {
       <Typography
         key={index}
         component="span"
-        sx={{ fontWeight: isBold ? 'bold' : 'normal' , fontSize: '25px'}}
+        sx={{ fontWeight: isBold ? 'bold' : 'normal', fontSize: { xs: '16px', sm: '18px', md: '20px', lg: '25px' } }}
       >
         {word}{' '}
       </Typography>
@@ -26,12 +26,11 @@ export default function StyledTypographyBox({ textLines, boldWords }) {
     <Box
       sx={{
         border: '2px solid',
-        // borderColor: 'primary.main',
+        borderColor: 'primary.main',
         borderRadius: '20px',
-        padding: '16px',
+        padding: { xs: '8px', sm: '12px', md: '16px', lg: '24px' },
         textAlign: 'start',
-        // width: '50vw',
-        // maxHeight: '25vh',
+        width: { xs: '90vw', sm: '70vw', md: '60vw', lg: '50vw' },
         margin: '20px auto',
         backgroundColor: 'background.paper',
         color: 'text.primary',
@@ -41,7 +40,7 @@ export default function StyledTypographyBox({ textLines, boldWords }) {
         <Box
           key={index}
           sx={{
-            marginBottom: index < textLines.length - 1 ? '70px' : '0', // Add spacing between lines
+            marginBottom: index < textLines.length - 1 ? { xs: '16px', sm: '24px', md: '40px', lg: '70px' } : '0', // Add spacing between lines
           }}
         >
           {renderTextWithBold(line, boldWords)}
@@ -49,4 +48,4 @@ export default function StyledTypographyBox({ textLines, boldWords }) {
       ))}
     </Box>
   );
-};
+}
